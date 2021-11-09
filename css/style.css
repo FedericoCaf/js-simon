@@ -36,7 +36,7 @@ h2{
   transition: opacity 1s ease-out;
 }
 
-.win-box.block{
+.win-box.visible{
   opacity: 1;
 }
 
