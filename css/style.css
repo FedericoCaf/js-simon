@@ -24,10 +24,23 @@ h2{
   text-align: center;
 }
 
-.num-indovinato{
-  color: green;
+.win-box{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  height: 240px;
+  width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-out;
 }
 
-.num-sbagliato{
-  color:red;
+.win-box.block{
+  opacity: 1;
 }
+
+.win-box img{
+  width: 100%;
+}
+

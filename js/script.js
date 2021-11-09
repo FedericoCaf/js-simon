@@ -20,9 +20,11 @@ for (let i = 0; i < 5; i++) {
 
 console.log('array num random', arrayNumRandom);
 
-setTimeout(startGioco, 3000);
+setTimeout(startGioco, 10000);
 
 function startGioco(){
+
+  document.querySelector('.numbers-box').innerHTML = '';
   for (let i = 0; i < 5; i++) {
 
     let numeroUtente = parseInt(prompt('inserisci un numero'));
@@ -37,33 +39,31 @@ function startGioco(){
   
   console.log('array indovinati', arrayNumIndovinati);
   console.log('array tentati', arrayNumTentati);
-  
-    document.querySelector('.text').innerHTML = `
+
+    for (let i = 0; i < 5; i++) {
+
+      if(arrayNumIndovinati.includes(arrayNumTentati[i])){
+
+        document.querySelector('.numbers-box').innerHTML +=
+        `  
+        <span style="color:green">${arrayNumTentati[i]} </span> 
+        `
+      }else{
+         document.querySelector('.numbers-box').innerHTML +=
+        `  
+        <span style="color:red">${arrayNumTentati[i]} </span> 
+        `
+      }
+    }
+
+     document.querySelector('.text').innerHTML = `
     Hai indovinato ${counterIndovinati} numeri
     `
-    document.querySelector('.numbers-box').innerHTML = `
-    ${arrayNumIndovinati}
-    `
 
-//     for (let i = 0; i < 5; i++) {
-//       // let number = genRandNumb(1, 100);
-
-//       if(arrayNumIndovinati.includes(arrayNumTentati[i])){
-//         document.querySelector('.numbers-box').innerHTML +=
-//         `
-//         ${numeroUtente.style.color="green"}      
-        
-//         `
-//       }else{
-//         document.querySelector('.numbers-box').innerHTML +=
-//         `
-//         ${numeroUtente.style.color="red"}      
-        
-//         `
-//       }
-      
-//     }
-
+    if(counterIndovinati===5){
+      const winBox = document.querySelector('.win-box');
+      winBox.classList.add('block');
+    }
 }
  
 
