@@ -1,0 +1,33 @@
+body{
+  background-color: black;
+}
+
+.container-box{
+  height: 100vh;
+}
+
+.box{
+  color: white;
+}
+
+h2{
+  text-align: center;
+}
+
+.numbers-box{
+  width: 510px;
+  height: 100px;
+  background-color:aquamarine;
+  border-radius: 5px;
+  color: black;
+  font-size: 70px;
+  text-align: center;
+}
+
+.num-indovinato{
+  color: green;
+}
+
+.num-sbagliato{
+  color:red;
+}
